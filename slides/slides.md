@@ -31,6 +31,12 @@
     + Rotate node to **root** and rebalance
 
 ---
+## Red-black trees
+
+---
+## Outline
+
+---
 ## Spinning-disk storage
 <div class="imgbox"><div style="flex:2">
 <ul>
@@ -45,11 +51,11 @@
 
 + Lots of **small** *iops* (I/O ops/sec) are bad
   + So **buffer** and do I/O in larger *pages* at a time
-+ Want **fewer** disk accesses, with **larger** chunks
   + Typical **page size** around *16KB*
-+ Also good for **network FS**: even higher **latency**
-+ Typical **seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
++ **Seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
+  + **Rotational** latency: 5.5ms (laptop), 3ms (server)
 + Typical **SSD** seek: 30ns
++ **Network FS**: much higher **latency**
 
 ---
 ## Trees for disk storage
@@ -69,9 +75,76 @@
 + All **leaves** are at same depth *h*
 + In terms of *t* and *h*, what is **min** num of keys stored?
   **Max**?
++ Variants: *B+*-tree: **payload** stored only in **leaves**
++ Variants: *B&lowast;*-tree: *2t-1* &lt; \`n\_k\` &lt; *3t-1*
+
+---
+## t=2 B-tree (2-3-4 tree)
+(TODO: fig)
 
 ---
 ## Outline
+
+---
+## B-tree operations
++ **Search tree** interface: search, insert, delete
++ Assess not only **computational** complexity, but also
+  + **Disk** accesses (read/write), in terms of *n* and *t*
++ Keep **root node** in RAM
+  + Other nodes need to be **read** in from disk
+  + Root may need to be **written** to disk if modified
++ Constraining **degree** (*t* .. *2t*) keeps tree **balanced**
+
+---
+## B-tree search
+
+---
+## B-tree insert
+
+---
+## Insert: example
+
+---
+## Outline
+
+---
+## B-tree delete
+
+---
+## Delete: example
+
+---
+## Delete example, cont.
+
+---
+## B-tree summary
+
+---
+## Using B-tree in filesystem
+
+---
+## Real-world filesystems
+
+---
+## Outline
+
+---
+## Midterm review
+
+---
+## Lecture 1: ch1-3
+
+---
+## Lecture 2: ch4-5
+
+---
+## Lecture 3: ch6-7
+
+---
+## Lecture 4: ch8,11
+
+---
+## Lecture 5: ch10,12
 
 ---
 ## Outline
