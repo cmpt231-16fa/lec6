@@ -11,10 +11,24 @@
 + Red-Black trees
   + Insert
 + B-Trees
-+ Midterm review
+  + Motivation and concept
+  + Search in \`O(t log\_t n)\`
+  + Insert in \`O(t log\_t n)\`
+  + Delete in \`O(t log\_t n)\`
+  + Application to filesystems
++ Midterm review (lec1-5, ch1-12 x9)
 
 ---
-## Red-black trees
+## Balancing search trees
++ Complexity of most operations depends on **height**
+  + Search, insert, delete
+  + **Worst** case: tree becomes a **linked list**
++ One approach: regular **rotations**: new root for subtree
+  + **Red-black** trees *(ch13)*
+    + Levels alternate colour: *(max path) &le; 2x (min path)*
+  + **AVL** trees: rotate after each insert/delete
+  + **Splay** trees: on each search/insert/delete,
+    + Rotate node to **root** and rebalance
 
 ---
 ## Outline
