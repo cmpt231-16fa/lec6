@@ -38,7 +38,7 @@
 
 ---
 ## Spinning-disk storage
-<div class="imgbox"><div style="flex:2">
+<div class="imgbox"><div style="flex:3">
 <ul>
 <li> **Seek**: move head to **track**, <br/>
   wait for **sector** *(slow)*
