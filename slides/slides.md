@@ -101,7 +101,7 @@ def leftRotate( T, x ):
 ---
 ## Rotation example
 
-<div class="imgbox"><div style="flex:2">
+<div class="imgbox"><div>
 ![Fig 13.3, rotation](static/img/Fig-13-3.svg)
 </div><div>
 <pre><code data-trim>
