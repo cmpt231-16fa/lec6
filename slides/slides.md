@@ -32,6 +32,12 @@
 
 ---
 ## Red-black trees
++ BST tree, each node has **colour** (1-bit)
++ All leaves point to **sentinel** node, *nil*, black
++ **Root** is black, parent is *nil*
++ Children of **red** nodes are always **black**
++ For each node, every **path** down to leaves has
+  same number of **black** nodes (its *black height* )
 
 ---
 ## Outline
