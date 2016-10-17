@@ -39,8 +39,7 @@
 + For each node, every **path** down to leaves has
   same number of **black** nodes (its *black height* )
 
->>>
-TODO: example RB tree
+![Fig 13.1, red-black tree](static/img/Fig-13-1.png)
 
 ---
 ## Height of red-black tree
