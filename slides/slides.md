@@ -59,6 +59,40 @@ TODO: example RB tree
 ---
 ## Operations on red-black
 + **Read-only** BST ops are unchanged: search, min/max, succ/pred
++ **Insert**ing: if *red*, is its **parent** red?
+  + if *black*, does it change **black height** of ancestors?
++ **Delete**: no problem if *red*: won't change black height
+  + if *black*: could affect *red* parent
+  + could also affect **black height**
+  + if deleting **root**, need new root to be *black*
+
+---
+## Tree rotation
+<div class="imgbox"><div>
+<ul>
+<li> Operation on a **node** in a BST
+<li> **Preserves** BST property
+<li> Colour-agnostic; applies to any **BST**
+<li> Similarly for **right** rotatation
+</ul>
+</div><div>
+<pre><code data-trim>
+def leftRotate( T, x ):
+  y = x.right
+  x.right = y.left
+  if y.left != NIL:
+    y.left.parent = x
+  y.parent = x.parent
+  if x.parent == NIL:
+    T.root = y
+  else if x == x.parent.left:
+    x.parent.left = y
+  else:
+    x.parent.right = y
+  y.left = x
+  x.parent = y
+</code></pre>
+</div></div>
 
 ---
 ## Outline
