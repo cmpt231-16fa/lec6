@@ -39,6 +39,27 @@
 + For each node, every **path** down to leaves has
   same number of **black** nodes (its *black height* )
 
+>>>
+TODO: example RB tree
+
+---
+## Height of red-black tree
++ Claim: node *x* of height *h(x)* &rArr; **black-height** *bh(x)* &ge; *h(x)/2*
++ Proof: every path to leaf has &le; *h(x)/2* **red** nodes
++ Claim: **subtree** at *x* has &ge; \`2^(bh(x))-1\` internal nodes
++ Proof: **induction** on height of *x*:
+  + *x*'s **children** have black height &ge; *bh(x)-1*
+  + by inductive hyp, their **subtrees** have &ge; \`2^(bh(x)-1)-1\` nodes
+  + So including *x* itself, *x*'s **subtree** has &ge;
+    \`2(2^(bh(x)-1)-1)+1\` = \`2^(bh(x))-1\` nodes
++ Claim: tree with *n* nodes has height &le; *2 lg(n+1)*
++ Proof: **Combining** above claims, \`n >= 2^(bh(r))-1 >= 2^(h/2)-1\`
++ Hence **tree operations** are *O(lg n)*
+
+---
+## Operations on red-black
++ **Read-only** BST ops are unchanged: search, min/max, succ/pred
+
 ---
 ## Outline
 
