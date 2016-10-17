@@ -75,6 +75,7 @@ TODO: example RB tree
 <li> Colour-agnostic; applies to any **BST**
 <li> Similarly for **right** rotatation
 </ul>
+![Fig 13.2, tree rotation](static/img/Fig-13-2.svg)
 </div><div>
 <pre><code data-trim>
 def leftRotate( T, x ):
