@@ -137,14 +137,14 @@ def leftRotate( T, x ):
 
 ---
 ## Spinning-disk storage
-<div class="imgbox"><div style="flex:3">
+<div class="imgbox"><div style="flex:2">
 <ul>
 <li> **Seek**: move head to **track**, <br/>
   wait for **sector** *(slow)*
 <li> **Throughput**: read from <br/>
   consecutive sectors *(fast)*
 </ul>
-<div>
+</div><div>
 ![Hard disk, CHS](static/img/Basic_disk_displaying_CHS.svg)
 </div></div>
 
