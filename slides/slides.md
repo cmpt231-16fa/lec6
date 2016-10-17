@@ -98,6 +98,11 @@ def leftRotate( T, x ):
 </div></div>
 
 ---
+## Rotation example
+
+![Fig 13.3, rotation](static/img/Fig-13-3.svg)
+
+---
 ## Outline
 
 ---
