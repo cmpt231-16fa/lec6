@@ -78,18 +78,21 @@
 </div><div>
 <pre><code data-trim>
 def leftRotate( T, x ):
-  y = x.right
-  x.right = y.left
+  y = x.right               # set y
+
+  x.right = y.left          # reparent y.left subtree
   if y.left != NIL:
     y.left.parent = x
-  y.parent = x.parent
+
+  y.parent = x.parent       # connect y to x.parent
   if x.parent == NIL:
     T.root = y
   else if x == x.parent.left:
     x.parent.left = y
   else:
     x.parent.right = y
-  y.left = x
+
+  y.left = x                # reparent x to y
   x.parent = y
 </code></pre>
 </div></div>
