@@ -103,6 +103,13 @@ def leftRotate( T, x ):
 ![Fig 13.3, rotation](static/img/Fig-13-3.svg)
 
 ---
+## Red-black insert
++ Same as regular **BST** insert: start with **search**
+  + Insert new node where we **ought** to have found key
++ Colour new node *red* first
+  + Then **fixup** to restore red-black property
+
+---
 ## Outline
 
 ---
