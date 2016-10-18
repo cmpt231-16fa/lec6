@@ -131,6 +131,58 @@ def leftRotate( T, x ):
   + Insert new node where we **ought** to have found key
 + Colour new node *red* first
   + Then **fixup** to restore red-black property
++ Potential problems: new node is **root**, or
+  + node's **parent** is already *red*
+  + **Recolour** and/or **rotate** up tree to root
+
+---
+## Notation
+<div class="imgbox"><div style="flex:2">
+<ul>
+<li> Let *z* be the newly **inserted** node (initially *red*)
+<li> Let *p* be *z*'s **parent**
+<li> Let *g* be *z*'s **grandparent**
+<li> Let *y* be *z*'s **uncle**: <ul>
+  <li> **Sibling** of *p*, i.e.,
+  <li> The other **child** of *g*
+</ul></ul>
+</div><div>
+![Fig 13-5, RB insert case 1](static/img/Fig-13-5.svg)
+</div></div>
+
++ We'll focus on when *p* the **left** child of *g*
+  + Hence *y* is the **right** child of *g*
++ Case when *p* is right child is **symmetric**
+
+---
+## RB insert: case 1
++ Case 1: *y* (uncle) is **red**
++ Then **recolour** *y* and *p* to black,
+  + **Recolour** *g* to red, and
+  + **Iterate**, with *g* as the new *z*
+
+![Fig 13-5, RB insert case 1](static/img/Fig-13-5.svg)
+
+---
+## RB insert: case 2,3
++ If *y* is **black**, we're done iterating
++ Case 2: *y* is **black**, *z* is a **right** child
+  + Then **left rotate** around *p*: &rArr;
++ Case 3: *y* is **black**, *z* is a **left** child
+  + Then **recolour** *p* black, and *g* red
+  + **Right rotate** on *g*, and insert is **done**
+
+![Fig 13-6, RB insert case 2/3](static/img/Fig-13-6.svg)
+
+---
+## RB insert: summary
++ Only case 1 (*red* uncle) **iterates** up the tree
+  + No **rotations**, only **recolouring**
++ Once we have a *black* uncle, we perform either
+  + **Two** rotations (case 2) and recolouring, or
+  + **One** rotation (case 3) and recolouring
++ Final step: may need to ensure **root** is black
++ Complexity: *O(lg n)*, iterating up tree
 
 ---
 ## Outline
