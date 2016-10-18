@@ -1,6 +1,8 @@
 # Spare slide content here
 ## Not rendered in presentation
 
+https://www.cs.usfca.edu/~galles/visualization/RedBlack.html
+
 ---
 ## Red-black trees
 + BST tree, each node has **colour** *(1-bit)*
