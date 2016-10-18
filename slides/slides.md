@@ -194,7 +194,7 @@ def leftRotate( T, x ):
 
 ---
 ## Spinning-disk storage
-<div class="imgbox"><div style="flex:4">
+<div class="imgbox"><div style="flex:3">
 <ul>
 <li> **Seek**: move head to **track**, <br/>
   wait for **sector** *(slow)*
@@ -205,7 +205,7 @@ def leftRotate( T, x ):
   <li> Typical **page size** around *16KB*
 </ul></ul>
 </div><div>
-![Hard disk, CHS](static/img/Basic_disk_displaying_CHS.svg)
+![Hard disk, CHS](static/img/Fig-18-2.svg)
 </div></div>
 
 + **Seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
@@ -236,7 +236,9 @@ def leftRotate( T, x ):
 
 ---
 ## t=2 B-tree (2-3-4 tree)
-(TODO: fig)
++ In **B+**-tree, pointers to **data** go in leaf nodes
+
+![2-3-4 B-tree](static/img/Fig-18-1.svg)
 
 ---
 ## Outline
@@ -246,10 +248,11 @@ def leftRotate( T, x ):
 + **Search tree** interface: search, insert, delete
 + Assess not only **computational** complexity, but also
   + **Disk** accesses (read/write), in terms of *n* and *t*
-+ Keep **root node** in RAM
++ Keep **root** in RAM (**write** to disk if modified)
   + Other nodes need to be **read** in from disk
-  + Root may need to be **written** to disk if modified
 + Constraining **degree** (*t* .. *2t*) keeps tree **balanced**
+
+![B-tree with t=1000](static/img/Fig-18-3.svg)
 
 ---
 ## B-tree search
@@ -276,24 +279,24 @@ def search( node, key ):
 ---
 ## B-tree insert
 + As in BST, **search** (down to leaf node)
-+ If leaf node **not full**, just insert new key
-+ If leaf full (*2t-1* keys), **split** into two nodes:
-  + Each has *t-1* keys
-  + **Median** node (number *t*) moves up to **parent**
-  + **Iterate** on parent, splitting as needed
++ As we go, **split** any full nodes (*2t-1* keys)
+  to ensure space for insertion
+  + Split: make **two** nodes with *t-1* keys each
+  + Promote **median** key up a level
++ Once we reach **leaf** node, we have space to insert
 
-![B-tree insert](static/img/BT-insert.png)
+![B-tree insert](static/img/Fig-18-5.svg)
 
 ---
 ## B-tree insert: example
 <div class="imgbox"><div><ul>
 <li> (a) **initial**: *t=3*
-<li> (b) **non-full** leaf
-<li> (c) full leaf: **split**
-<li> (d) **split** up to root
-<li> (e) 1-level **split**
+<li> (b) **non-full** leaf *ACDE*
+<li> (c) full leaf *RSTUV*: **split**
+<li> (d) **split** root *GMPTX*
+<li> (e) **split** node *ABCDE*
 </ul></div><div style="flex:4">
-![B-tree insertion example](static/img/BT-insert-ex.png)
+![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
 ---
@@ -316,9 +319,27 @@ def search( node, key ):
 
 ---
 ## Delete: example
+<div class="imgbox"><div><ul>
+<li> (a) **initial**: *t=3*
+<li> (b) **internal** node &ge; *t*, key in **leaf**
+<li> (c) key in **internal**: use **predecessor**
+<li> (d) key in **internal**: **merge** children
+</ul></div><div style="flex:4">
+![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
+</div></div>
 
 ---
 ## Delete example, cont.
+<div class="imgbox"><div><ul>
+<li> (e) **internal** node *CL* too small,
+  and **sibling** too small to steal from:
+  **merge**
+<li> (f) merge **pushes** *P* down from root
+<li> (g) child *AB* too small: **steal** from *EJK*
+<li> (d) key in **internal**: **merge** children
+</ul></div><div style="flex:4">
+![B-tree deletion, pt2](static/img/Fig-18-8-R.svg)
+</div></div>
 
 ---
 ## B-tree summary
