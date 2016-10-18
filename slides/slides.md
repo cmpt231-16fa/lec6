@@ -41,20 +41,18 @@ and He has **committed** to us the **word of reconciliation**.
 
 ---
 ## Spinning-disk storage
-<div class="imgbox"><div style="flex:3">
-<ul>
+<div class="imgbox"><div style="flex:2"><ul>
 <li> **Seek**: move head to **track**, <br/>
   wait for **sector** *(slow)*
 <li> **Throughput**: read from <br/>
   consecutive sectors *(fast)*
-<li> Lots of **small** *iops* (I/O ops/sec) are bad<ul>
-  <li> So **buffer** and do I/O in larger *pages* at a time
-  <li> Typical **page size** around *16KB*
-</ul></ul>
-</div><div>
+</ul></div><div>
 ![Hard disk, CHS](static/img/Fig-18-2.svg)
 </div></div>
 
++ Lots of **small** *iops* (I/O ops/sec) are bad
+  + So **buffer** and do I/O in larger *pages* at a time
+  + Typical **page size** around *16KB*
 + **Seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
   + **Rotational** latency: 5.5ms (laptop), 3ms (server)
 + Typical **SSD** seek: 30ns
@@ -62,9 +60,12 @@ and He has **committed** to us the **word of reconciliation**.
 
 ---
 ## Trees for disk storage
-+ To edit data on disk, **read** page into RAM, **modify**,
-  and **write** page back to disk
-  + **Limited** number of pages in RAM at a time
++ To edit data on disk:
+  + **Read** page from disk into RAM,
+  + **Modify** page in-place in RAM, then
+  + **Write** page back to disk
++ **Disk** operations are very **slow**
++ RAM can only store a **limited** number of pages at a time
 + **Tree-based** disk filesystem: 1 *node* = 1 *page*
   + Want a **low**, bushy tree with large **degree**
   + Generalise **BST** to degree *t*
@@ -84,9 +85,9 @@ and He has **committed** to us the **word of reconciliation**.
 
 ---
 ## t=2 B-tree (2-3-4 tree)
-+ In **B+**-tree, pointers to **data** go in leaf nodes
-
 ![2-3-4 B-tree](static/img/Fig-18-1.svg)
+
+In **B+**-tree, pointers to **data** go in leaf nodes
 
 ---
 ## Outline
