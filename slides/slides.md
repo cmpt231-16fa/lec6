@@ -216,8 +216,8 @@ def search( node, key ):
 + **Operations**:
   + **Create**: CPU *O(1)*, disk *O(1)*
   + **Search**/insert/delete: CPU *O(th)*, disk *O(h)*
-+ When **modifying** tree, need to ensure **degree** of each node
-  stays between *t* and *2t*
++ When **modifying** tree, as we walk down tree, <br/>
+  ensure **degree** of each node stays between *t* and *2t*
   + i.e., number of **keys** stored is between *t-1* and *2t-1*
 
 ---
