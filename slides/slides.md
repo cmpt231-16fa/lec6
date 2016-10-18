@@ -36,7 +36,7 @@ and He has **committed** to us the **word of reconciliation**.
   + **Worst** case: tree becomes a **linked list**
 + One approach: regular **rotations**: new root for subtree
   + **Red-black** trees *(ch13)*
-    + Levels alternate colour: *(max path) &le; 2x (min path)*
+    + Levels alternate **colour**: *(max path) &le; 2x (min path)*
   + **AVL** trees: rotate after each insert/delete
   + **Splay** trees: on each search/insert/delete,
     + Rotate node to **root** and rebalance
