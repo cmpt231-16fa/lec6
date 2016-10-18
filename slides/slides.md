@@ -33,8 +33,8 @@
 ---
 ## Red-black trees
 + BST tree, each node has **colour** *(1-bit)*
-  + All leaves point to **sentinel** node: *nil* (black)
-  + **Root** is black, parent is *nil*
+  + All leaves point to **sentinel** node: *NIL* (black)
+  + **Root** is black, parent is *NIL*
 + Children of **red** nodes are always **black**
 + For each node, every **path** down to leaves has
   same number of **black** nodes (its *black height* )
@@ -137,19 +137,18 @@ def leftRotate( T, x ):
 
 ---
 ## Notation
-<div class="imgbox"><div>
+<div class="imgbox"><div style="flex:2">
 <ul>
 <li> Let *z* be the newly **inserted** node (initially *red*)
 <li> Let *p* be *z*'s **parent**
 <li> Let *g* be *z*'s **grandparent**
-<li> Let *y* be *z*'s **uncle**: <ul>
-  <li> **Sibling** of *p*, i.e.,
-  <li> The other **child** of *g*
+<li> Let *y* be *z*'s **uncle**: i.e., **sibling** of *p*
 </ul></ul>
 </div><div>
 ![Fig 13-5a, notation](static/img/Fig-13-5a.png)
 </div></div>
 
++ Only have problem when *p* is also **red**
 + We'll focus on when *p* is the **left** child of *g*
   + Hence *y* is the **right** child of *g*
 + Case when *p* is right child is **symmetric**
@@ -165,7 +164,8 @@ def leftRotate( T, x ):
 
 ---
 ## RB insert: case 2,3
-+ If *y* is **black**, we're done iterating
++ If *y* is **black**, it must be *NIL*
+  + No more **iterating** required
 + Case 2: *y* is **black**, *z* is a **right** child
   + Then **left rotate** around *p*: &rArr;
 + Case 3: *y* is **black**, *z* is a **left** child
@@ -175,10 +175,15 @@ def leftRotate( T, x ):
 ![Fig 13-6, RB insert case 2/3](static/img/Fig-13-6.svg)
 
 ---
+## RB insert: example
+
+![Fig 13-4, RB insert](static/img/Fig-13-4.svg)
+
+---
 ## RB insert: summary
 + Only case 1 (*red* uncle) **iterates** up the tree
   + No **rotations**, only **recolouring**
-+ Once we have a *black* uncle, we perform either
++ Once we have a *black* (NIL) uncle, we do either
   + **Two** rotations (case 2) and recolouring, or
   + **One** rotation (case 3) and recolouring
 + Final step: may need to ensure **root** is black
@@ -188,10 +193,6 @@ def leftRotate( T, x ):
 ## Outline
 
 ---
-## Red-black delete
-
-
----
 ## Spinning-disk storage
 <div class="imgbox"><div style="flex:4">
 <ul>
@@ -199,14 +200,14 @@ def leftRotate( T, x ):
   wait for **sector** *(slow)*
 <li> **Throughput**: read from <br/>
   consecutive sectors *(fast)*
-</ul>
+<li> Lots of **small** *iops* (I/O ops/sec) are bad<ul>
+  <li> So **buffer** and do I/O in larger *pages* at a time
+  <li> Typical **page size** around *16KB*
+</ul></ul>
 </div><div>
 ![Hard disk, CHS](static/img/Basic_disk_displaying_CHS.svg)
 </div></div>
 
-+ Lots of **small** *iops* (I/O ops/sec) are bad
-  + So **buffer** and do I/O in larger *pages* at a time
-  + Typical **page size** around *16KB*
 + **Seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
   + **Rotational** latency: 5.5ms (laptop), 3ms (server)
 + Typical **SSD** seek: 30ns
