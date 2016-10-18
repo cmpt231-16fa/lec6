@@ -1,9 +1,10 @@
-<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-DiKkJKvDi64-tree_road.jpg" -->
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
 # CMPT231
 ## Lecture 6: ch18
 ### B-Trees and Midterm Review
 
 ---
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
 ## 2 Corinthians 5:17-19 <span class="ref">(NASB)</span>
 Therefore if anyone is **in Christ**, he is a **new creature**; <br/>
 the **old** things passed away; behold, **new** things have come.
@@ -18,14 +19,15 @@ not counting their **trespasses** against them, <br/>
 and He has **committed** to us the **word of reconciliation**.
 
 ---
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
 ## Outline for today
-+ B-Trees
-  + Motivation and concept
-  + Search in \`O(t log\_t n)\`
-  + Insert in \`O(t log\_t n)\`
-  + Delete in \`O(t log\_t n)\`
-  + Application to filesystems
-+ Midterm review (lec1-5, ch1-12 x9)
++ **B-Trees**
+  + Motivation and **concept**
+  + **Search** in \`O(t log\_t n)\`
+  + **Insert** in \`O(t log\_t n)\`
+  + **Delete** in \`O(t log\_t n)\`
+  + Application to **filesystems**
++ Midterm **review** (lec1-5, ch1-12 x9)
 
 ---
 ## Balancing search trees
@@ -90,7 +92,15 @@ and He has **committed** to us the **word of reconciliation**.
 In **B+**-tree, pointers to **data** go in leaf nodes
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
+## Outline for today
++ B-Trees
+  + Motivation and concept
+  + **Search in** \`O(t log\_t n)\`
+  + **Insert in** \`O(t log\_t n)\`
+  + Delete in \`O(t log\_t n)\`
+  + Application to filesystems
++ Midterm review (lec1-5, ch1-12 x9)
 
 ---
 ## B-tree operations
@@ -149,7 +159,15 @@ def search( node, key ):
 </div></div>
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
+## Outline for today
++ B-Trees
+  + Motivation and concept
+  + Search in \`O(t log\_t n)\`
+  + Insert in \`O(t log\_t n)\`
+  + **Delete in** \`O(t log\_t n)\`
+  + **Application to filesystems**
++ Midterm review (lec1-5, ch1-12 x9)
 
 ---
 ## B-tree delete
@@ -233,7 +251,15 @@ def search( node, key ):
   + and more...
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
+## Outline for today
++ B-Trees
+  + Motivation and concept
+  + Search in \`O(t log\_t n)\`
+  + Insert in \`O(t log\_t n)\`
+  + Delete in \`O(t log\_t n)\`
+  + Application to filesystems
++ **Midterm review (lec1-5, ch1-12 x9)**
 
 ---
 ## Midterm review
@@ -264,7 +290,15 @@ def search( node, key ):
 ## Lecture 5: ch10,12
 
 ---
-## Outline
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
+## Outline for today
++ **B-Trees**
+  + Motivation and **concept**
+  + **Search** in \`O(t log\_t n)\`
+  + **Insert** in \`O(t log\_t n)\`
+  + **Delete** in \`O(t log\_t n)\`
+  + Application to **filesystems**
++ Midterm **review** (lec1-5, ch1-12 x9)
 
 ---
 <!-- .slide: class="empty" -->
