@@ -286,7 +286,15 @@ def search( node, key ):
 
 ---
 ## B-tree insert: example
+<div class="imgbox"><div><ul>
+<li> (a) **initial**: *t=3*
+<li> (b) **non-full** leaf
+<li> (c) full leaf: **split**
+<li> (d) **split** up to root
+<li> (e) 1-level **split**
+</ul></div><div style="flex:4">
 ![B-tree insertion example](static/img/BT-insert-ex.png)
+</div></div>
 
 ---
 ## Outline
