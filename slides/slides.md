@@ -127,8 +127,8 @@ def search( node, key ):
 ---
 ## B-tree insert
 + As in BST, **search** (down to leaf node)
-+ As we go, **split** any full nodes (*2t-1* keys)
-  to ensure space for insertion
++ As we go, **split** full nodes (*2t-1* keys)
+  to ensure free space
   + Split: make **two** nodes with *t-1* keys each
   + Promote **median** key up a level
 + Once we reach **leaf** node, we have space to insert
