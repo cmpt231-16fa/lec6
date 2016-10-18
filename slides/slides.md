@@ -147,13 +147,13 @@ def search( node, key ):
 
 ---
 ## B-tree insert: example
-<div class="imgbox"><div><ul>
+<div class="imgbox"><div style="flex:3"><ul>
 <li> (a) **initial**: *t=3*
 <li> (b) **non-full** leaf *ACDE*
 <li> (c) full leaf *RSTUV*: **split**
 <li> (d) **split** root *GMPTX*
 <li> (e) **split** node *ABCDE*
-</ul></div><div style="flex:1">
+</ul></div><div style="flex:4">
 ![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
@@ -185,25 +185,25 @@ def search( node, key ):
 
 ---
 ## Delete: example
-<div class="imgbox"><div><ul>
+<div class="imgbox"><div style="flex:3"><ul>
 <li> (a) **initial**: *t=3*
 <li> (b) **internal** node &ge; *t*, key in **leaf**
 <li> (c) key in **internal**: use **predecessor**
 <li> (d) key in **internal**: **merge** children
-</ul></div><div style="flex:1">
+</ul></div><div style="flex:4">
 ![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
 </div></div>
 
 ---
-## Delete example, cont.
-<div class="imgbox"><div><ul>
-<li> (e) **internal** node *CL* too small,
+## Delete example (t=3)
+<div class="imgbox"><div style="flex:3"><ul>
+<li> (e) node *CL* too **small**,
   and **sibling** too small to steal from:
   **merge**
-<li> (f) merge **pushes** *P* down from root
-<li> (g) child *AB* too small: **steal** from *EJK*
-<li> (d) key in **internal**: **merge** children
-</ul></div><div style="flex:1">
+<li> (e') merge **pushes** *P* down from root
+<li> (f) child *AB* too small: **steal** from *EJK*
+</ul></div><div style="flex:4">
+![B-tree deletion, step d](static/img/Fig-18-8-L-d.png)<br/>
 ![B-tree deletion, pt2](static/img/Fig-18-8-R.svg)
 </div></div>
 
