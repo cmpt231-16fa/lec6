@@ -282,9 +282,29 @@ def search( node, key ):
 
 ---
 ## Lecture 3: ch6-7
++ **Heapsort** *(ch6)* :
+  + Trees, binary **heaps**, **max-heap** property
+  + **Heapify()** function on a node
+  + **Heapsort**: build a max-heap, use it for sorting
+  + **Priority queue** using max-heap: operations, complexity
++ **Quicksort** *(ch7)* :
+  + Naive quicksort with **fixed** pivot
+  + **Randomised** pivot
+  + Analysis of randomised pivot: **expected** time
 
 ---
 ## Lecture 4: ch8,11
++ **Linear**-time sorts *(ch8)* (**assumptions!**)
+  + **Decision-tree** model, why comparison sorts are *&Omega;(n lg n)*
+  + **Counting** sort: census + move: *&Theta;(n+k)*, **stability**
+  + **Radix** sort (with *r* -bit digits): *&Theta;(d(n+k))*
+  + **Bucket** sort: *&Theta;(n)* **expected** time
++ **Hash** tables *(ch11)*:
+  + Hash **function**, hash **collisions**, **chaining**
+  + **Load factor** *&alpha;* = *n*/*num\_buckets*
+  + **Search** in *&Theta;(1+&alpha;)*
+  + **Hashes**: div, mul, universal hashing
+  + **Open addressing**: linear, quad, double-hash
 
 ---
 ## Lecture 5: ch10,12
