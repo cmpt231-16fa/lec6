@@ -4,7 +4,18 @@
 ### B-Trees and Midterm Review
 
 ---
-## Devotional
+## 2 Corinthians 5:17-19 <span class="ref">(NASB)</span>
+Therefore if anyone is **in Christ**, he is a **new creature**; <br/>
+the **old** things passed away; behold, **new** things have come.
+
+Now all these things are **from God**, <br/>
+who **reconciled** us to Himself through Christ <br/>
+and gave us the **ministry of reconciliation**,
+
+namely, that God was in **Christ** <br/>
+**reconciling** the world to Himself, <br/>
+not counting their **trespasses** against them, <br/>
+and He has **committed** to us the **word of reconciliation**.
 
 ---
 ## Outline for today
