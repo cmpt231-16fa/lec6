@@ -210,6 +210,8 @@ def search( node, key ):
 + B-trees can be used for **lookup tables**:
   + **Inode** table: *metadata* for each object
     + Indexed by *inode*, unique to each object
+  + **Directory** tables: list *files* in a directory
+    + Map *filenames* (string) to *inodes*
   + **Extents** table: *LBAs* for each extent
     + Or the data itself, if small enough
   + **Journal**: transaction *log*
