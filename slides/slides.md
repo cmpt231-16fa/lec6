@@ -86,9 +86,12 @@ and He has **committed** to us the **word of reconciliation**.
 
 ---
 ## t=2 B-tree (2-3-4 tree)
+
+(**Red-black** tree is a special case of 2-3-4 tree)
+
 ![2-3-4 B-tree](static/img/Fig-18-1.svg)
 
-In **B+**-tree, pointers to **data** go in leaf nodes
+(In **B+**-tree, pointers to **data** go in leaf nodes)
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
