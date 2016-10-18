@@ -221,7 +221,7 @@ def search( node, key ):
   + i.e., number of **keys** stored is between *t-1* and *2t-1*
 
 ---
-## Using B-tree in filesystem
+## Using B-tree in filesystems
 + Filesystems store: **files**, **directories**, and **metadata**
   + e.g., name, owner, permissions, modification time)
 + File contents are stored in 1 or more **extents** on disk
