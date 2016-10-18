@@ -75,7 +75,7 @@ and He has **committed** to us the **word of reconciliation**.
   + \`n\_k\` **keys** in sorted order (*t-1* &lt; \`n\_k\` &lt; *2t-1*)
   + \`n\_k+1\` **child links**, interleaved between the keys
 + **Degree** of each node is between *t* and *2t*
-  + Also may be categorised by **order** = *2t*
+  + Also may be categorised by (Knuth) **order** = *2t*
 + All **leaves** are at same depth *h*
 + In terms of *t* and *h*, what is **min** num of keys stored?
   **Max**?
