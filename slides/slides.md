@@ -151,13 +151,13 @@ def search( node, key ):
 
 ---
 ## B-tree insert: example
-<div class="imgbox"><div style="flex:3"><ul>
+<div class="imgbox"><div style="flex:4"><ul>
 <li> (a) **initial**: *t=3*
 <li> (b) **non-full** leaf *ACDE*
 <li> (c) full leaf *RSTUV*: **split**
 <li> (d) **split** root *GMPTX*
 <li> (e) **split** node *ABCDE*
-</ul></div><div style="flex:4">
+</ul></div><div style="flex:5">
 ![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
@@ -195,7 +195,7 @@ def search( node, key ):
 <li> (c) key in **internal** node *CGM*: use **predecessor** *L*
 <li> (d) key in **internal** node *CGL* and both children
   *DE*, *JK* too small: **merge**
-</ul></div><div style="flex:4">
+</ul></div><div style="flex:5">
 ![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
 </div></div>
 
@@ -204,7 +204,7 @@ def search( node, key ):
 <div class="imgbox"><div style="flex:3"><ul>
 <li> (e) node *CL* too **small**,
   and **sibling** *TX* too small to steal from:
-  **merge**
+  so **merge** *CL* and *TX*
 <li> (e') merge **pushes** *P* down from root
 <li> (f) child *AB* too small: **steal** from *EJK*
 </ul></div><div style="flex:4">
