@@ -47,10 +47,10 @@
   + Proof: every path to leaf has &le; *h(x)/2* **red** nodes
 + Claim: **subtree** at *x* has &ge; \`2^(bh(x))-1\` internal nodes
   + Proof: **induction** on height of *x*:
-    + *x*'s **children** have black height &ge; *bh(x)-1*
-    + by inductive hyp, their **subtrees** have &ge; \`2^(bh(x)-1)-1\` nodes
-    + So num nodes in *x*'s **subtree** (incl. itself) is &ge;
-      \`2(2^(bh(x)-1)-1)+1\` = \`2^(bh(x))-1\`
+  + *x*'s **children** have black height &ge; *bh(x)-1*
+  + by inductive hyp, their **subtrees** have &ge; \`2^(bh(x)-1)-1\` nodes
+  + So num nodes in *x*'s **subtree** (incl. itself) is &ge;
+    \`2(2^(bh(x)-1)-1)+1\` = \`2^(bh(x))-1\`
 + Claim: tree with *n* nodes has **height** &le; *2 lg(n+1)*
   + Proof: **Combine** above: \`n >= 2^(bh(r))-1 >= 2^(h/2)-1\`
 + Hence **tree operations** are *O(lg n)*
@@ -137,7 +137,7 @@ def leftRotate( T, x ):
 
 ---
 ## Notation
-<div class="imgbox"><div style="flex:2">
+<div class="imgbox"><div>
 <ul>
 <li> Let *z* be the newly **inserted** node (initially *red*)
 <li> Let *p* be *z*'s **parent**
@@ -147,10 +147,10 @@ def leftRotate( T, x ):
   <li> The other **child** of *g*
 </ul></ul>
 </div><div>
-![Fig 13-5, RB insert case 1](static/img/Fig-13-5.svg)
+![Fig 13-5a, notation](static/img/Fig-13-5a.png)
 </div></div>
 
-+ We'll focus on when *p* the **left** child of *g*
++ We'll focus on when *p* is the **left** child of *g*
   + Hence *y* is the **right** child of *g*
 + Case when *p* is right child is **symmetric**
 
@@ -186,6 +186,10 @@ def leftRotate( T, x ):
 
 ---
 ## Outline
+
+---
+## Red-black delete
+
 
 ---
 ## Spinning-disk storage
