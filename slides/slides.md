@@ -143,7 +143,7 @@ def search( node, key ):
 <li> (c) full leaf *RSTUV*: **split**
 <li> (d) **split** root *GMPTX*
 <li> (e) **split** node *ABCDE*
-</ul></div><div style="flex:4">
+</ul></div><div style="flex:3">
 ![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
@@ -152,17 +152,17 @@ def search( node, key ):
 
 ---
 ## B-tree delete
-+ **Descend** tree, ensuring each node has &ge; *t* keys
-+ If key is **here**, and we're a **leaf**: just delete key
-+ If key is **here**, and we're **not** a leaf:
-  + If **left** child has &ge; *t* keys, replace key w/**predecessor**
-  + If **right** child has &ge; *t* keys, replace key w/**successor**
-  + Else, **merge** left+right children, and delete key
-+ If key is **not** here (and we're not a leaf):
+**Descend** tree, ensuring each node has &ge; *t* keys
+1. If key is **here**, and we're a **leaf**: just delete key
+2. If key is **here**, and we're **not** a leaf:
+  + (a) If **left** child has &ge; *t* keys, replace key w/**predecessor**
+  + (b) If **right** child has &ge; *t* keys, replace key w/**successor**
+  + (c) Else, **merge** left+right children, and delete key
+3. If key is **not** here (and we're not a leaf):
   + **Find** the child node the key ought to be in
   + If the **child** node has only *t-1* keys:
-    + If either **sibling** has &ge; *t* keys, **steal** one
-    + Else, **merge** with a sibling
+    + (a) If either **sibling** has &ge; *t* keys, **steal** one
+    + (b) Else, **merge** with a sibling
   + **Iterate** into that child
 
 ---
@@ -172,7 +172,7 @@ def search( node, key ):
 <li> (b) **internal** node &ge; *t*, key in **leaf**
 <li> (c) key in **internal**: use **predecessor**
 <li> (d) key in **internal**: **merge** children
-</ul></div><div style="flex:4">
+</ul></div><div style="flex:3">
 ![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
 </div></div>
 
@@ -192,7 +192,8 @@ def search( node, key ):
 ---
 ## B-tree summary
 + **Generalisation** of BST, but:
-  + All **leaves** are at same **height** (*h* = *&Theta;(lg n)* )
+  + All **leaves** are at same **height**
+    (*h* = \`Theta(log\_t n)\` = *&Theta;(lg n)* )
   + **Degree** of each node is between *t* and *2t*
 + **Operations**:
   + **Create**: CPU *O(1)*, disk *O(1)*
