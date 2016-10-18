@@ -151,13 +151,13 @@ def search( node, key ):
 
 ---
 ## B-tree insert: example
-<div class="imgbox"><div style="flex:4"><ul>
+<div class="imgbox"><div style="flex:5"><ul>
 <li> (a) **initial**: *t=3*
 <li> (b) **non-full** leaf *ACDE*
 <li> (c) full leaf *RSTUV*: **split**
 <li> (d) **split** root *GMPTX*
 <li> (e) **split** node *ABCDE*
-</ul></div><div style="flex:5">
+</ul></div><div style="flex:7">
 ![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
