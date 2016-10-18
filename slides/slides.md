@@ -121,13 +121,13 @@ def search( node, key ):
   for (i = 1; (i <= node.size) and (key > node.keys[i]); i++)
 
   if ((i <= node.size) and (key == node.keys[i])):
-    return (node, i)        # found it!
+    return (node, i)                            # found it!
 
   if (node.isLeaf()):
-    return None             # key not in tree
+    return None                                 # key not in tree
 
-  read( node.child[i] )     # load child from disk
-  return search( node.child[i], key )       # recurse
+  read( node.child[i] )                         # load child from disk
+  return search( node.child[i], key )           # recurse
 ```
 
 + **Tail** recursion can easily be changed to **loop**
