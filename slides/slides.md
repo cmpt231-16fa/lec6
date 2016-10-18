@@ -275,15 +275,36 @@ def search( node, key ):
 
 ---
 ## B-tree insert
++ As in BST, **search** (down to leaf node)
++ If leaf node **not full**, just insert new key
++ If leaf full (*2t-1* keys), **split** into two nodes:
+  + Each has *t-1* keys
+  + **Median** node (number *t*) moves up to **parent**
+  + **Iterate** on parent, splitting as needed
+
+![B-tree insert](static/img/BT-insert.png)
 
 ---
-## Insert: example
+## B-tree insert: example
+![B-tree insertion example](static/img/BT-insert-ex.png)
 
 ---
 ## Outline
 
 ---
 ## B-tree delete
++ **Descend** tree, ensuring each node has &ge; *t* keys
++ If key is **here**, and we're a **leaf**: just delete key
++ If key is **here**, and we're **not** a leaf:
+  + If **left** child has &ge; *t* keys, replace key w/**predecessor**
+  + If **right** child has &ge; *t* keys, replace key w/**successor**
+  + Else, **merge** left+right children, and delete key
++ If key is **not** here (and we're not a leaf):
+  + **Find** the child node the key ought to be in
+  + If the **child** node has only *t-1* keys:
+    + If either **sibling** has &ge; *t* keys, **steal** one
+    + Else, **merge** with a sibling
+  + **Iterate** into that child
 
 ---
 ## Delete: example
