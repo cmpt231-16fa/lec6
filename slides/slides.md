@@ -54,9 +54,9 @@ and He has **committed** to us the **word of reconciliation**.
 
 + Lots of **small** *iops* (I/O ops/sec) are bad
   + So **buffer** and do I/O in larger *pages* at a time (~*16KB*)
-+ **Seek times**: 15ms (laptop), 10ms (desktop), 4ms (server)
-  + **Rotational** latency: 5.5ms (laptop), 3ms (server)
-+ Typical **SSD** seek: 30ns
++ **Seek times**: *15ms* (laptop), *10ms* (desktop), *4ms* (server)
+  + **Rotational** latency: *5.5ms* (laptop), 3ms (server)
++ Typical **SSD** seek: *30ns*
 + **Network FS**: much higher **latency**
 
 ---
