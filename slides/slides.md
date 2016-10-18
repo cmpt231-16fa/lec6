@@ -224,6 +224,8 @@ def search( node, key ):
 + When **modifying** tree, as we walk down tree, <br/>
   ensure **degree** of each node stays between *t* and *2t*
   + i.e., number of **keys** stored is between *t-1* and *2t-1*
++ Online **demos**:
+  [U San Francisco](https://www.cs.usfca.edu/~galles/visualization/BTree.html)
 
 ---
 ## Using B-tree in filesystems
