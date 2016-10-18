@@ -144,6 +144,7 @@ def search( node, key ):
   to ensure free space
   + Split: make **two** nodes with *t-1* keys each
   + Promote **median** key up a level
++ **Preemptive** split: before we have problems
 + Once we reach **leaf** node, we have space to insert
 
 ![B-tree insert](static/img/Fig-18-5.svg)
