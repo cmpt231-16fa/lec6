@@ -253,6 +253,25 @@ def leftRotate( T, x ):
 
 ---
 ## B-tree search
+```
+def search( node, key ):
+
+  # Linear search through keys
+  for (i = 1; (i <= node.size) and (key > node.keys[i]); i++)
+
+  if ((i <= node.size) and (key == node.keys[i])):
+    return (node, i)        # found it!
+
+  if (node.isLeaf()):
+    return None             # key not in tree
+
+  read( node.child[i] )     # load child from disk
+  return search( node.child[i], key )       # recurse
+```
+
++ **Tail** recursion can easily be changed to **loop**
++ **Compute** (worst-case): O( *th* ) = \`O(t log\_t n)\`
++ **Disk** accesses (worst-case): O(h) = \`O(log\_t n)\`
 
 ---
 ## B-tree insert
