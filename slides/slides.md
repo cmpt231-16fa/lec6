@@ -272,13 +272,31 @@ def search( node, key ):
 + TA will invigilate; he **cannot** answer questions on content
   + If you feel a question is **ambiguous**, write your interpretation
     on your exam sheet and answer accordingly
++ Focus more on **lecture** material than textbook
 + Mostly **hand-simulation**, but expect some **proofs** as well
 
 ---
 ## Lecture 1: ch1-3
++ **Insertion** sort and its **analysis**
++ Discrete **math** review
+  + **Logic** and proofs
+  + Monotonicity, limits, iterated functions
+  + **Fibonacci** sequence and golden ratio
+  + Factorials and **Stirling's** approximation
++ **Asymptotic** notation: &Theta;, O, &Omega;, o, &omega;
+  + **Proving** asymptotic bounds
 
 ---
 ## Lecture 2: ch4-5
++ **Divide and conquer** *(ch4)*
+  + **Merge** sort and its **analysis**
+  + Recursion trees + proof by **induction**
+  + Maximum **subarray**
+  + Matrix multiply vs **Strassen**'s method
+  + **Master method** of solving recurrences
++ **Probabilistic Analysis** *(ch5)*
+  + **Hiring** problem and analysis
+  + **Randomised** algorithms and PRNGs
 
 ---
 ## Lecture 3: ch6-7
@@ -288,9 +306,11 @@ def search( node, key ):
   + **Heapsort**: build a max-heap, use it for sorting
   + **Priority queue** using max-heap: operations, complexity
 + **Quicksort** *(ch7)* :
-  + Naive quicksort with **fixed** pivot
+  + Regular quicksort with **fixed** (Lomuto) partitioning
   + **Randomised** pivot
   + Analysis of randomised pivot: **expected** time
++ **Vegas**-style vs **Monte-Carlo** style probabilistic algo
+  + Monte-Carlo **matrix multiply** checking
 
 ---
 ## Lecture 4: ch8,11
@@ -308,6 +328,16 @@ def search( node, key ):
 
 ---
 ## Lecture 5: ch10,12
++ **Linked lists**: singly/**doubly**-linked, **circular**
++ **Stacks** and **queues**:
+  + Operations, implementation with linked-lists
++ **Trees** and Binary search trees (**BST**)
+  + Tree **traversals**: inorder, preorder, postorder
+  + **Searching** a BST
+  + **Min**/max and **successor**/predecessor
+  + **Insert** and **delete**
+  + **Randomised** BST
++ **Skip lists**
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
