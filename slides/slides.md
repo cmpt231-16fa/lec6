@@ -360,4 +360,4 @@ def search( node, key ):
 + Midterm **review** (lec1-5, ch1-12 x9)
 
 ---
-<!-- .slide: class="empty" -->
+<!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" class="empty" -->
