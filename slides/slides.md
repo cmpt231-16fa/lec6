@@ -153,7 +153,7 @@ def search( node, key ):
 <li> (c) full leaf *RSTUV*: **split**
 <li> (d) **split** root *GMPTX*
 <li> (e) **split** node *ABCDE*
-</ul></div><div style="flex:2">
+</ul></div><div style="flex:1">
 ![B-tree insertion example](static/img/Fig-18-7.svg)
 </div></div>
 
@@ -190,7 +190,7 @@ def search( node, key ):
 <li> (b) **internal** node &ge; *t*, key in **leaf**
 <li> (c) key in **internal**: use **predecessor**
 <li> (d) key in **internal**: **merge** children
-</ul></div><div style="flex:2">
+</ul></div><div style="flex:1">
 ![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
 </div></div>
 
@@ -203,7 +203,7 @@ def search( node, key ):
 <li> (f) merge **pushes** *P* down from root
 <li> (g) child *AB* too small: **steal** from *EJK*
 <li> (d) key in **internal**: **merge** children
-</ul></div><div style="flex:2">
+</ul></div><div style="flex:1">
 ![B-tree deletion, pt2](static/img/Fig-18-8-R.svg)
 </div></div>
 
