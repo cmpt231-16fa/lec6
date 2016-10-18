@@ -327,16 +327,18 @@ def search( node, key ):
 
 ---
 ## Lecture 5: ch10,12
-+ **Linked lists**: singly/**doubly**-linked, **circular**
-+ **Stacks** and **queues**:
++ **Linked lists** *(ch10)*:
+  + Singly/**doubly**-linked, **circular**
++ **Stacks** and **queues** *(ch10)*:
   + Operations, implementation with linked-lists
-+ **Trees** and Binary search trees (**BST**)
++ **Trees** and Binary search trees (**BST**) *(ch12)*:
   + Tree **traversals**: inorder, preorder, postorder
   + **Searching** a BST
   + **Min**/max and **successor**/predecessor
   + **Insert** and **delete**
   + **Randomised** BST
 + **Skip lists**
+  + Implementation, complexity
 
 ---
 <!-- .slide: data-background-image="https://sermons.seanho.com/img/bg/unsplash-UOwvwZ9Dy6w-hold_hands.jpg" -->
