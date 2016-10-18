@@ -179,18 +179,58 @@ def search( node, key ):
 
 ---
 ## B-tree summary
++ **Generalisation** of BST, but:
+  + All **leaves** are at same **height** (*h* = *&Theta;(lg n)* )
+  + **Degree** of each node is between *t* and *2t*
++ **Operations**:
+  + **Create**: CPU *O(1)*, disk *O(1)*
+  + **Search**/insert/delete: CPU *O(th)*, disk *O(h)*
++ When **modifying** tree, need to ensure **degree** of each node
+  stays between *t* and *2t*
+  + i.e., number of **keys** stored is between *t-1* and *2t-1*
 
 ---
 ## Using B-tree in filesystem
++ Filesystems store: **files**, **directories**, and **metadata**
+  + e.g., name, owner, permissions, modification time)
++ File contents are stored in 1 or more **extents** on disk
+  + i.e., Logical Block Addresses (LBA) interpretable by HDD
++ B-trees can be used for **lookup tables**:
+  + **Inode** table: *metadata* for each object
+    + Indexed by *inode*, unique to each object
+  + **Extents** table: *LBAs* for each extent
+    + Or the data itself, if small enough
+  + **Journal**: transaction *log*
+    + Preserve *integrity* in case a write fails
 
 ---
-## Real-world filesystems
+## Filesystems using B-trees
++ **NTFS** indexes (i.e., *inode* tables)
++ Mac **HFS** catalog records (i.e., *inode* tables) use **B+-trees**
++ Linux **ext3/4** directory indexes use **Htree** hash tables
+  + **Hash** filenames for fast lookup
++ Linux **btrfs** ("B-tree filesystem") uses them everywhere:
+  + **Directory** index (with hashed *filenames* )
+  + **Extent** tree (payload is either *LBAs* or actual *data* )
+  + **Log** tree (journal)
+  + **Root** tree storing links to all the *other* trees!
+  + and more...
 
 ---
 ## Outline
 
 ---
 ## Midterm review
++ Tue 25 Oct, **13:10-14:30** (80min)
+  + **60 pts**, estimate 1min/pt
++ Open paper **book**, open paper **notes**
++ No **electronic** devices: computers, phones, etc.
+  + Phone should be **off**/mute and in **pocket**/bag
++ Bring pen/pencil and **blank** paper to write on
++ TA will invigilate; he **cannot** answer questions on content
+  + If you feel a question is **ambiguous**, write your interpretation
+    on your exam sheet and answer accordingly
++ Mostly **hand-simulation**, but expect some **proofs** as well
 
 ---
 ## Lecture 1: ch1-3
