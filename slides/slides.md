@@ -187,9 +187,10 @@ def search( node, key ):
 ## Delete: example
 <div class="imgbox"><div style="flex:3"><ul>
 <li> (a) **initial**: *t=3*
-<li> (b) **internal** node &ge; *t*, key in **leaf**
-<li> (c) key in **internal**: use **predecessor**
-<li> (d) key in **internal**: **merge** children
+<li> (b) node *CGM* &ge; *t*, leaf *DEF* &ge; *t*
+<li> (c) key in **internal** node *CGM*: use **predecessor** *L*
+<li> (d) key in **internal** node *CGL* and both children
+  *DE*, *JK* too small: **merge**
 </ul></div><div style="flex:4">
 ![B-tree deletion, pt1](static/img/Fig-18-8-L.svg)
 </div></div>
@@ -198,7 +199,7 @@ def search( node, key ):
 ## Delete example (t=3)
 <div class="imgbox"><div style="flex:3"><ul>
 <li> (e) node *CL* too **small**,
-  and **sibling** too small to steal from:
+  and **sibling** *TX* too small to steal from:
   **merge**
 <li> (e') merge **pushes** *P* down from root
 <li> (f) child *AB* too small: **steal** from *EJK*
