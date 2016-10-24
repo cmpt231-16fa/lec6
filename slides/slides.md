@@ -74,7 +74,7 @@ and He has **committed** to us the **word of reconciliation**.
 ---
 ## B-trees
 + In a B-tree of **min-degree** *t*, every **node** *k* has:
-  + \`n\_k\` **keys** in sorted order (*t-1* &lt; \`n\_k\` &lt; *2t-1*)
+  + \`n\_k\` **keys** in sorted order (*t-1* &le; \`n\_k\` &le; *2t-1*)
   + \`n\_k+1\` **child links**, interleaved between the keys
 + **Degree** of each node is between *t* and *2t*
   + Also may be categorised by (Knuth) **order** = *2t*
@@ -82,7 +82,7 @@ and He has **committed** to us the **word of reconciliation**.
 + In terms of *t* and *h*, what is **min** num of keys stored?
   **Max**?
 + Variants: *B+*-tree: **payload** stored only in **leaves**
-+ Variants: *B&lowast;*-tree: *2t-1* &lt; \`n\_k\` &lt; *3t-1*
++ Variants: *B&lowast;*-tree: *2t-1* &le; \`n\_k\` &le; *3t-1*
 
 ---
 ## t=2 B-tree (2-3-4 tree)
