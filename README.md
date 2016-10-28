@@ -1,5 +1,5 @@
 # Lecture 6: [CMPT231](https://cmpt231-16fa.github.io/)
-## Red-Black Trees and B-Trees
+## B-Trees
 
 [![Travis-CI build status](https://travis-ci.org/cmpt231-16fa/lec6.svg)](https://travis-ci.org/cmpt231-16fa/lec6)
 [![Node dependencies](https://david-dm.org/cmpt231-16fa/lec6.svg)](https://david-dm.org/cmpt231-16fa/lec6)
