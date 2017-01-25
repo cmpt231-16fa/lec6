@@ -31,26 +31,35 @@
   </head>
   <body>
     <div class="reveal">
+
       <noscript><div class="noscript">
         <h1><%= pkg.description %></h1>
         <p>(Please see PDF link below)</p>
       </div></noscript>
-      <div class="slides">
 
-        <section data-charset="utf8"
+      <div class="slides">
+        <% pkg.config.slides.forEach( function(md) { %>
+        <section data-markdown data-charset="utf8"
           data-separator="^\s{0,3}-\s*-\s*-[-\s]*$"
           data-separator-vertical="^\s{0,3}\*\s*\*\s*\*[\*\s]*$"
-          data-separator-notes="^\s{0,3}>\s*>\s*>[>\s]*$"
-          data-markdown="slides/slides.md">
+          data-separator-notes="^\s{0,3}>\s*>\s*>[>\s]*$">
+          <script type="text/template">
+        <%= grunt.file.read(md) %>
+          </script>
         </section>
+        <% } ) %>
+      </div>
 
-        <div id="footer"><%= pkg.config.pretty_url %> &emsp;
+      <div id="footer"><%= pkg.config.pretty_url %>
+        <span class="links">
           <a href="https://github.com/<%= pkg.repository %>">
             <i class="fa fa-github fa-inverse"></i></a>
-          <a href="static/<%= config.shortname %>.pdf">
+          <a href="static/<%= pkg.shortname %>.pdf">
             <i class="fa fa-file-pdf-o fa-inverse"></i></a>
-        </div>
+        </span>
+        <span class="commit"><%= pkg.commit %></span>
       </div>
+
     </div>
 
     <% pkg.config.js.forEach( function(js) { %>

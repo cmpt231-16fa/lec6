@@ -1,16 +1,6 @@
 module.exports = (grunt) ->
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
-    config:
-      shortname: '<%= pkg.name.replace(new RegExp(".*\/"), "") %>'
-
-    watch:
-      index:
-        files: ['_index.html']
-        tasks: ['buildIndex']
-      coffeelint:
-        files: ['Gruntfile.coffee']
-        tasks: ['coffeelint']
 
     connect:
       serve:
@@ -29,29 +19,30 @@ module.exports = (grunt) ->
     curl:
       qr:
         src: 'https://zxing.org/w/chart?cht=qr&chs=350x350&chld=M&choe=UTF-8&chl=<%= pkg.config.pretty_url %>'
-        dest: 'static/img/<%= config.shortname %>-qr.png'
+        dest: 'static/img/<%= pkg.shortname %>-qr.png'
 
     exec:
-      print: 'phantomjs --debug=true rasterise.js "http://localhost:9000/?print-pdf" static/<%= config.shortname %>.pdf 999 728'
-      thumbnail: 'convert -resize 50% static/<%= config.shortname %>.pdf[0] static/img/thumbnail.jpg'
+      print: 'phantomjs --debug=true rasterise.js "http://localhost:9000/?print-pdf" static/<%= pkg.shortname %>.pdf 999 728'
+      thumbnail: 'convert -resize 50% static/<%= pkg.shortname %>.pdf[0] static/img/thumbnail.jpg'
 
     copy:
+      index:
+        src: '_index.html'
+        dest: 'index.html'
+        options:
+          process: (content, path) ->
+            return grunt.template.process content
       dist:
         files: [{
           expand: true
           src: [
             'slides/**'
             'static/**'
-          ]
-          dest: 'dist/'
-        },{
-          src: [
             'index.html'
             'CNAME'
             '.nojekyll'
           ]
           dest: 'dist/'
-          filter: 'isFile'
         },{
           src: 'static/img/favicon.ico'
           dest: 'dist/'
@@ -71,16 +62,14 @@ module.exports = (grunt) ->
           remote: 'git@github.com:<%= pkg.repository %>'
           branch: 'gh-pages'
 
+  # Generated grut vars
+  grunt.config.merge
+    pkg:
+      shortname: '<%= pkg.name.replace(new RegExp(".*\/"), "") %>'
+      commit: (process.env.TRAVIS_COMMIT || "testing").substr(0,7)
+
   # Load all grunt tasks.
   require('load-grunt-tasks')(grunt)
-
-  grunt.registerTask 'buildIndex',
-    'Build index.html from template.', ->
-      indexTemplate = grunt.file.read '_index.html'
-      html = grunt.template.process indexTemplate, data:
-        pkg: grunt.config 'pkg'
-        config: grunt.config 'config'
-      grunt.file.write 'index.html', html
 
   grunt.registerTask 'cname',
     'Create CNAME from NPM config if needed.', ->
@@ -98,13 +87,13 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'serve',
     'Run presentation locally', [
-      'buildIndex'
+      'copy:index'
       'connect'
     ]
 
   grunt.registerTask 'pdf',
     'Render a PDF copy of the presentation (using PhantomJS)', [
-      'buildIndex'
+      'copy:index'
       'connect:serve'
       'exec:print'
       'exec:thumbnail'

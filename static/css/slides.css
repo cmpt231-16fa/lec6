@@ -61,11 +61,19 @@ html { font-size: 3em }
 /* Common slide header/footer */
 #header, #footer {
   position: absolute;
-  left: 0;
-  font-size: 60%;
+  z-index: 20;
+  left: 0.25rem;
+  font-size: 0.60rem;
 }
-#header { top: 0; }
-#footer { bottom: 0; }
+#header { top: 0.25rem; }
+#footer { bottom: 0.25rem; }
+
+#footer .links { margin: 0 1em }
+
+#footer .commit {
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 0.75em;
+}
 
 /* Placeholder if Javascript is disabled */
 noscript .noscript {
