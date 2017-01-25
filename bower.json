@@ -1,8 +1,0 @@
-{
-  "name": "cmpt231-16fa-lec6",
-  "version": "0.6.0",
-  "dependencies": {
-    "reveal.js": "~3.3.0",
-    "highlightjs": "~9.7.0"
-  }
-}

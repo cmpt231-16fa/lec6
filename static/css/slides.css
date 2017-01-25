@@ -2,6 +2,11 @@
  * Local styles specific to my presentations
  *********************************************/
 
+/* Larger text */
+/*
+html { font-size: 3em }
+*/
+
 /* Override slide centering (interferes with print-pdf?) */
 @media screen {
   section.top { top: 0 !important; }
@@ -22,6 +27,9 @@
 /* Except on special reverse-color slides */
 .reveal section.has-light-background h2:after { display: none; }
 
+/* Larger font for Chinese */
+.reveal section .zh { font-size: larger }
+
 /* Flexbox layout for images */
 .imgbox {
   width: 100%;
@@ -30,7 +38,19 @@
   align-items: flex-start;
   align-content: flex-start;
 }
-.imgbox > div { flex: 1; }
+.imgbox > div { flex: 1 }
+
+/* Old-style CSS flex box for Phantom, #52 */
+@media print {
+  .imgbox {
+    display: -webkit-box;
+    -webkit-flex-flow: row;
+    -webkit-box-pack: center;
+  }
+  .imgbox > div {
+    -webkit-box-flex: 1;
+  }
+}
 
 /* Image captions */
 .reveal section .caption {
